@@ -1,0 +1,60 @@
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $veryDarkBlue;
+  font-family: 'Rubik', sans-serif;
+  line-height: 1.2;
+  @include breakpoint-up(medium) {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+}
+
+.text-white {
+  color: $white;
+}
+
+.text-secondary {
+  color: $paleBlue;
+}
+
+.main {
+  @include breakpoint-up(medium) {
+    display: flex;
+    align-items: center;
+    // height: 98vh;
+  }
+
+  h1, h2, p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .card {
+    border-radius: toRem(16);
+    overflow: hidden;
+  }
+}
+
+.footer {
+  @include breakpoint-up(medium) {
+    // height: 2vh;
+    // padding: toRem(2) 0;
+  }
+
+  // @include breakpoint-up(large) {
+  //   padding: 0;
+  // }
+}

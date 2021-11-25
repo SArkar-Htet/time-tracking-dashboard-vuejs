@@ -1,0 +1,87 @@
+.report__user {
+  @include breakpoint-up(medium) {
+    grid-area: profile;
+  }
+  .user {
+    &-card {
+      background-color: $darkBlue;
+      &__profile {
+        display: flex;
+        align-items: center;
+        gap: toRem(16);
+        background-color: $blue;
+        padding: toRem(32) toRem(29);
+        border-radius: toRem(16);
+
+        @include breakpoint-up(large) {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      } 
+      
+      &__timeframe {
+        padding: toRem(24);
+        .timeframe {
+          &__list {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            list-style-type: none;
+
+            @include breakpoint-up(large) {
+              flex-direction: column;
+              align-items: flex-start;
+              row-gap: toRem(24);
+            }
+          }
+
+          &__item {
+            display: inline-block;
+          }
+
+          &__link {
+            text-decoration: none;
+            color: $desaturatedBlue;
+            @include easeInOut(all, 200ms);
+
+            &--active {
+              color: $white;
+            }
+
+            &:hover {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+
+    &__avatar {
+      width: toRem(70);
+      border: 3px solid #fff;
+      border-radius: 50%;
+
+      @include breakpoint-up(medium) {
+        width: toRem(84);
+      }
+    }
+
+    &__info {
+      @include breakpoint-up(large) {
+        padding: toRem(24) 0 toRem(46) 0;
+      }
+      &__name {
+        line-height: 1.5;
+        font-size: $font-lg; 
+        font-weight: $font-light;
+
+        @include breakpoint-up(medium) {
+          line-height: 1.2;
+          font-size: $font-xxl;
+        }
+      }
+    }
+  }
+}

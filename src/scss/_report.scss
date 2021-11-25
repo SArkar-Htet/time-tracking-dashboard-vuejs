@@ -1,0 +1,29 @@
+.report {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: toRem(24);
+  padding: toRem(80) toRem(24);
+  max-width: toRem(1100);
+
+  @include breakpoint-up(medium) {
+    flex: 1;
+    grid-template-areas: 
+      "profile profile"
+      "work play"
+      "study exercise"
+      "social self-care";
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  @include breakpoint-up(large) {
+    grid-template-areas: 
+      "profile work play study"
+      "profile exercise social self-care";
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    margin: auto;
+  }
+}
