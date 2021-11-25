@@ -19,3 +19,13 @@
     </div>
   </article>
 </template>
+
+<script>
+export default {
+  name: "ProfileCard",
+}
+</script>
+
+<style lang="scss">
+  @import "@/scss/user.scss";
+</style>
