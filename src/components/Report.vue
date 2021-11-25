@@ -1,7 +1,7 @@
 <template>
   <section class="report" id="report">
-    <ProfileCard />
-    <ReportCard :reports="reports" :timeFrames="timeFrames" />
+    <ProfileCard @get-data="getData" :timeFrame="timeFrame" />
+    <ReportCard :reports="reports" :timeFrames="timeFrame" />
   </section>
 </template>
 
@@ -17,11 +17,13 @@
     data() {
       return {
         reports: [],
-        timeFrames: "weekly"
+        timeFrame: "weekly",
       }
     },
     methods: {
-      // 
+      getData(timeFrame) {
+        this.timeFrame = timeFrame;
+      }
     },
     created() {
       this.reports = [

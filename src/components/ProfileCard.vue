@@ -11,9 +11,9 @@
           
       <div class="user-card__timeframe">
         <ul class="timeframe__list">
-          <li class="timeframe__item"><a class="timeframe__link" id="daily" href="#daily">Daily</a></li>
-          <li class="timeframe__item"><a class="timeframe__link timeframe__link--active" id="weekly" href="#weekly">Weekly</a></li>
-          <li class="timeframe__item"><a class="timeframe__link" id="monthly" href="#monthly">Monthly</a></li>
+          <li class="timeframe__item"><a @click.prevent="handleClick" :class="['timeframe__link', `timeframe__link--${isDaily}`]" id="daily" href="/daily">Daily</a></li>
+          <li class="timeframe__item"><a @click.prevent="handleClick" :class="['timeframe__link', `timeframe__link--${isWeekly}`]" id="weekly" href="/weekly">Weekly</a></li>
+          <li class="timeframe__item"><a @click.prevent="handleClick" :class="['timeframe__link', `timeframe__link--${isMonthly}`]" id="monthly" href="/monthly">Monthly</a></li>
         </ul>
       </div>
     </div>
@@ -21,9 +21,29 @@
 </template>
 
 <script>
-export default {
-  name: "ProfileCard",
-}
+  export default {
+    name: "ProfileCard",
+    props: {
+      timeFrame: String
+    },
+    methods: {
+      handleClick(event) {
+        const timeFrame = event.target.id;
+        this.$emit("get-data", timeFrame);
+      }
+    },
+    computed: {
+      isDaily() {
+        return this.timeFrame === "daily" && "active";
+      },
+      isWeekly() {
+        return this.timeFrame === "weekly" && "active";
+      },
+      isMonthly() {
+        return this.timeFrame === "monthly" && "active";
+      }
+    }
+  }
 </script>
 
 <style lang="scss">
