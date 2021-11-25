@@ -70,7 +70,7 @@
 
     &__info {
       @include breakpoint-up(large) {
-        padding: toRem(24) 0 toRem(46) 0;
+        padding: toRem(24) 0 toRem(50) 0;
       }
       &__name {
         line-height: 1.5;

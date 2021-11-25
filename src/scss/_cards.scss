@@ -2,6 +2,7 @@
   padding-top: toRem(38);
   background-repeat: no-repeat;
   background-position: top toRem(-5) right toRem(20);
+  min-width: toRem(206);
 
   @include breakpoint-up(medium) {
     padding-top: toRem(44);
@@ -116,7 +117,7 @@
   }
 
   &__time {
-    @include breakpoint-up(large) {
+    @include breakpoint-up(medium) {
       flex-direction: column;
       align-items: flex-start;
       margin-top: toRem(18);
