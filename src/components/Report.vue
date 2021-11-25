@@ -29,7 +29,6 @@
         try {
           const res = await fetch(url);
           const reports = await res.json();
-          console.table(reports);
           return reports;
         } catch (error) {
           console.log(error);
